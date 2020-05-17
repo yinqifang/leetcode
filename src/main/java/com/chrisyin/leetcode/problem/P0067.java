@@ -15,10 +15,12 @@ public class P0067 {
         while (cursor < a.length() || cursor < b.length()) {
             int ia = 0, ib = 0;
             if (cursor < a.length()) {
-                ia = Integer.valueOf(String.valueOf(a.charAt(a.length() - 1 - cursor)));
+                //                ia = Integer.valueOf(String.valueOf(a.charAt(a.length() - 1 - cursor)));
+                ia = a.charAt(a.length() - 1 - cursor) == '1' ? 1 : 0;
             }
             if (cursor < b.length()) {
-                ib = Integer.valueOf(String.valueOf(b.charAt(b.length() - 1 - cursor)));
+                //                ib = Integer.valueOf(String.valueOf(b.charAt(b.length() - 1 - cursor)));
+                ib = b.charAt(b.length() - 1 - cursor) == '1' ? 1 : 0;
             }
             int bit = ia ^ ib;
             if (acc > 0) {
